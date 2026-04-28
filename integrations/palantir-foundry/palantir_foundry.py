@@ -16,9 +16,18 @@ from typing import Dict, List, Optional, Set, Tuple
 from urllib.parse import urljoin
 
 import requests
-from dotenv import load_dotenv
 from oaaclient.client import OAAClient, OAAClientError
 from oaaclient.templates import CustomApplication, OAAPermission
+
+# Try to import dotenv, but make it optional
+try:
+    from dotenv import load_dotenv
+    HAS_DOTENV = True
+except ImportError:
+    HAS_DOTENV = False
+    def load_dotenv(path=None):
+        """Dummy function if dotenv is not available."""
+        pass
 
 
 logger = logging.getLogger(__name__)
@@ -458,9 +467,14 @@ def main():
 
     # Load environment variables
     if os.path.exists(args.config):
-        load_dotenv(args.config)
+        if HAS_DOTENV:
+            load_dotenv(args.config)
+            logger.info(f"Loaded configuration from {args.config}")
+        else:
+            logger.warning(f"Configuration file {args.config} found, but python-dotenv is not installed")
+            logger.info("Using environment variables directly instead")
     else:
-        logger.warning(f"Configuration file {args.config} not found")
+        logger.info(f"Configuration file {args.config} not found - using environment variables")
 
     # Get credentials from environment
     foundry_base_url = os.getenv("FOUNDRY_BASE_URL")
