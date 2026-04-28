@@ -48,7 +48,8 @@ class PalantirFoundryClient:
         """Test connection to Palantir Foundry API."""
         try:
             response = requests.get(
-                f"{self.base_url}/api/foundry/core/v1/user",
+                f"{self.base_url}/api/v2/admin/users",
+                #f"{self.base_url}/api/foundry/core/v1/user",
                 headers=self.headers,
                 timeout=10,
             )
