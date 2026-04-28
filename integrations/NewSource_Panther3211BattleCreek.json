@@ -1,0 +1,884 @@
+{
+  "version": 1,
+  "timestamp": "2025-09-22T15:58:33.464814494Z",
+  "tenant": "westrock",
+  "description": "Export Job vscode 2025-09-22T15:58:26.143Z",
+  "options": {
+    "excludeTypes": null,
+    "includeTypes": [
+      "SOURCE"
+    ],
+    "objectOptions": {
+      "SOURCE": {
+        "includedNames": ["Panther 3211 Battle Creek"],
+        "includedIds": [ ]
+        }
+    }
+  },
+  "objects": [
+    {
+      "version": 1,
+      "self": {
+        "name": "Panther 3211 Battle Creek",
+        "type": "SOURCE"
+      },
+      "object": {
+        "name": "Panther 3211 Battle Creek",
+        "type": "Web Services",
+        "connectorClass": "sailpoint.connector.webservices.WebServicesConnector",
+        "connectorScriptName": "web-services-angularsc",
+        "description": "Panther 3211 Battle Creek",
+        "deleteThreshold": 10,
+        "provisionAsCsv": false,
+        "owner": {
+          "type": "IDENTITY",
+          "id": "2c918083837ff88d01839f3d1d214e28",
+          "name": "david.vastola"
+        },
+        "accountCorrelationRule": null,
+        "managerCorrelationRule": null,
+        "beforeProvisioningRule": null,
+        "features": [
+          "PASSWORD",
+          "UNLOCK",
+          "AUTHENTICATE",
+          "PROVISIONING",
+          "ENABLE"
+        ],
+        "schemas": [
+          {
+            "nativeObjectType": "user",
+            "identityAttribute": "UserName",
+            "displayAttribute": "UserName",
+            "hierarchyAttribute": null,
+            "includePermissions": false,
+            "features": [],
+            "configuration": {},
+            "attributes": [
+              {
+                "name": "UserName",
+                "type": "STRING",
+                "schema": null,
+                "description": "UserName",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "EmployeeId",
+                "type": "STRING",
+                "schema": null,
+                "description": "employeeId",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "groups",
+                "type": "STRING",
+                "schema": {
+                  "type": "CONNECTOR_SCHEMA",
+                  "name": "group"
+                },
+                "description": "groups",
+                "isMulti": true,
+                "isEntitlement": true,
+                "isGroup": true
+              },
+              {
+                "name": "IsShopFloor",
+                "type": "STRING",
+                "schema": null,
+                "description": "IsShopFloor",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "Email",
+                "type": "STRING",
+                "schema": null,
+                "description": "Email",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "IsActive",
+                "type": "STRING",
+                "schema": null,
+                "description": "IsActive",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "PwdDaysToExpire",
+                "type": "STRING",
+                "schema": null,
+                "description": "PwdDaysToExpire",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "FullName",
+                "type": "STRING",
+                "schema": null,
+                "description": "FullName",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "PhoneNumber",
+                "type": "STRING",
+                "schema": null,
+                "description": "PhoneNumber",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              }
+            ],
+            "name": "account",
+            "created": "2023-12-05T14:11:25.737Z",
+            "modified": "2025-09-04T10:10:55.325Z"
+          },
+          {
+            "nativeObjectType": "group",
+            "identityAttribute": "groups",
+            "displayAttribute": "groups",
+            "hierarchyAttribute": null,
+            "includePermissions": false,
+            "features": [],
+            "configuration": {},
+            "attributes": [
+              {
+                "name": "groups",
+                "type": "STRING",
+                "schema": null,
+                "description": "groups",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              }
+            ],
+            "name": "group",
+            "created": "2023-12-05T14:11:25.737Z",
+            "modified": "2025-09-04T10:10:55.325Z"
+          }
+        ],
+        "connectorAttributes": {
+          "healthCheckTimeout": 30,
+          "supportsDeltaAgg": "true",
+          "lastAggregationDate_group": "2023-12-06T20:57:41Z",
+          "deltaAggregationEnabled": false,
+          "throwProvBeforeRuleException": true,
+          "checkDeletedDisabled": false,
+          "connectionType": "direct",
+          "enableHasMore": false,
+          "client_id": "477b587c-bca6-42fd-8dab-7ced0714f571",
+          "isGetObjectRequiredForPTA": true,
+          "timeoutInSeconds": "60",
+          "genericWebServiceBaseUrl": "https://mill-mes-security.westrock.com",
+          "connectionParameters": [
+            {
+              "contextUrl": "/HealthCheck",
+              "httpMethodType": "GET",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "1",
+              "uniqueNameForEndPoint": "Test Connection",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211"
+              },
+              "operationType": "Test Connection",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": null,
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "200"
+              ]
+            },
+            {
+              "resMappingObj": {
+                "IsShopFloor": "isShopFloor",
+                "Email": "email",
+                "UserName": "userName",
+                "IsActive": "isActive",
+                "PwdDaysToExpire": "pwdDaysToExpire",
+                "FullName": "fullName",
+                "PhoneNumber": "phoneNumber",
+                "groups": "groups[*].groupName",
+                "EmployeeId": "employeeId"
+              },
+              "contextUrl": "/v1/users",
+              "httpMethodType": "GET",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "2",
+              "uniqueNameForEndPoint": "Account Aggregation",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211"
+              },
+              "operationType": "Account Aggregation",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": null,
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "200"
+              ]
+            },
+            {
+              "contextUrl": "/v1/users",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "3",
+              "uniqueNameForEndPoint": "Create Account",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Create Account",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n  \"FirstName\": \"$plan.FirstName$\",\n  \"LastName\": \"$plan.LastName$\",\n  \"UserName\": \"$plan.nativeIdentity$\",\n  \"Email\": \"$plan.Email$\",\n  \"Password\": \"$plan.Password$\",\n  \"ForceNewPassword\": true,\n  \"ForcePasswordExpiration\": true,\n  \"PhoneNumber\": \"$plan.PhoneNumber$\",\n  \"EmployeeId\": \"$plan.EmployeeId$\",\n  \"IsShopFloor\": false,\n  \"IsEmployee\": true,\n  \"PwdDayToExpire\": 90,\n  \"IsActive\": true\n}",
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "contextUrl": "/v1/users/activate",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "4",
+              "uniqueNameForEndPoint": "Enable Account",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Enable Account",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n  \"UserName\":  \"$plan.nativeIdentity$\"\n}",
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "contextUrl": "/v1/users/deactivate",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "5",
+              "uniqueNameForEndPoint": "Disable Account",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Disable Account",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n  \"UserName\":  \"$plan.nativeIdentity$\"\n}",
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "contextUrl": "/v1/groups/assign",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "6",
+              "uniqueNameForEndPoint": "Add Role",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Add Entitlement",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n\"groupNames\": [\n\"$plan.groups$\"\n],\n\"userName\": \"$plan.nativeIdentity$\"\n}",
+                "bodyFormat": "raw"
+              },
+              "beforeRule": "Westrock_Panther_AssignGroup_BeforeOperationRule",
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "contextUrl": "/v1/groups/remove",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "7",
+              "uniqueNameForEndPoint": "Remove Role",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Remove Entitlement",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n\"groupNames\": [\n\"$plan.groups$\"\n],\n\"userName\": \"$plan.nativeIdentity$\"\n}",
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "resMappingObj": {
+                "IsShopFloor": "isShopFloor",
+                "Email": "email",
+                "UserName": "name",
+                "IsActive": "isActive",
+                "PwdDaysToExpire": "pwdDaysToExpire",
+                "PhoneNumber": "phoneNumber",
+                "EmployeeId": "employeeId"
+              },
+              "contextUrl": "/v1/users/$plan.nativeIdentity$",
+              "httpMethodType": "GET",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "8",
+              "uniqueNameForEndPoint": "Single Account Aggregation",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211"
+              },
+              "operationType": "Get Object",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": null,
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "httpMethodType": "GET",
+              "pagingInitialOffset": 0,
+              "sequenceNumberForEndpoint": "9",
+              "uniqueNameForEndPoint": "Role Aggregation",
+              "rootPath": "$[*]",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": null,
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ],
+              "resMappingObj": {
+                "groups": "groupName"
+              },
+              "contextUrl": "/v1/groups",
+              "pagingSize": 50,
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211"
+              },
+              "operationType": "Group Aggregation"
+            }
+          ],
+          "oauth_request_parameters": {
+            "scope": "api://mill-mes-api/.default"
+          },
+          "grant_type": "CLIENT_CREDENTIALS",
+          "partitionAggregationEnabled": false,
+          "throwBeforeAfterRuleException": false,
+          "hasFullAggregationCompleted": true,
+          "token_url": "https://login.microsoftonline.com/WestRockCo.onmicrosoft.com/oauth2/v2.0/token",
+          "possibleHttpErrors": {},
+          "sourceConnected": true,
+          "createAccountWithEntReq": false,
+          "throwProvAfterRuleException": true,
+          "disableCookies": false,
+          "lastAggregationDate_account": "2025-09-22T10:12:00Z",
+          "deleteThresholdPercentage": 10,
+          "fixedPlanMultivaluedAttribute": "true",
+          "version": "v2",
+          "cloudCacheUpdate": 1758535921017,
+          "templateApplication": "Web Services Template",
+          "encrypted": "accesstoken,refresh_token,oauth_token_info,client_secret,private_key,private_key_password,clientCertificate,clientKeySpec,resourceOwnerPassword,custom_auth_token_info",
+          "authenticationMethod": "OAuth2Login",
+          "httpCookieSpecsStandard": "true",
+          "healthy": true,
+          "cloudDisplayName": "Panther 3211 Battle Creek",
+          "connectorName": "Web Services",
+          "enableStatus": "IsActive=true",
+          "updateAttrWithChangePassword": false,
+          "since": "2025-07-27T13:59:53.068Z",
+          "status": "SOURCE_STATE_HEALTHY"
+        },
+        "crossTenantConnectorAttributes": {
+          "connectionParameters": [
+            {
+              "contextUrl": "/HealthCheck",
+              "httpMethodType": "GET",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "1",
+              "uniqueNameForEndPoint": "Test Connection",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211"
+              },
+              "operationType": "Test Connection",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": null,
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "200"
+              ]
+            },
+            {
+              "resMappingObj": {
+                "IsShopFloor": "isShopFloor",
+                "Email": "email",
+                "UserName": "userName",
+                "IsActive": "isActive",
+                "PwdDaysToExpire": "pwdDaysToExpire",
+                "FullName": "fullName",
+                "PhoneNumber": "phoneNumber",
+                "groups": "groups[*].groupName",
+                "EmployeeId": "employeeId"
+              },
+              "contextUrl": "/v1/users",
+              "httpMethodType": "GET",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "2",
+              "uniqueNameForEndPoint": "Account Aggregation",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211"
+              },
+              "operationType": "Account Aggregation",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": null,
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "200"
+              ]
+            },
+            {
+              "contextUrl": "/v1/users",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "3",
+              "uniqueNameForEndPoint": "Create Account",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Create Account",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n  \"FirstName\": \"$plan.FirstName$\",\n  \"LastName\": \"$plan.LastName$\",\n  \"UserName\": \"$plan.nativeIdentity$\",\n  \"Email\": \"$plan.Email$\",\n  \"Password\": \"$plan.Password$\",\n  \"ForceNewPassword\": true,\n  \"ForcePasswordExpiration\": true,\n  \"PhoneNumber\": \"$plan.PhoneNumber$\",\n  \"EmployeeId\": \"$plan.EmployeeId$\",\n  \"IsShopFloor\": false,\n  \"IsEmployee\": true,\n  \"PwdDayToExpire\": 90,\n  \"IsActive\": true\n}",
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "contextUrl": "/v1/users/activate",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "4",
+              "uniqueNameForEndPoint": "Enable Account",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Enable Account",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n  \"UserName\":  \"$plan.nativeIdentity$\"\n}",
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "contextUrl": "/v1/users/deactivate",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "5",
+              "uniqueNameForEndPoint": "Disable Account",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Disable Account",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n  \"UserName\":  \"$plan.nativeIdentity$\"\n}",
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "contextUrl": "/v1/groups/assign",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "6",
+              "uniqueNameForEndPoint": "Add Role",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Add Entitlement",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n\"groupNames\": [\n\"$plan.groups$\"\n],\n\"userName\": \"$plan.nativeIdentity$\"\n}",
+                "bodyFormat": "raw"
+              },
+              "beforeRule": "Westrock_Panther_AssignGroup_BeforeOperationRule",
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "contextUrl": "/v1/groups/remove",
+              "httpMethodType": "POST",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "7",
+              "uniqueNameForEndPoint": "Remove Role",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211",
+                "Content-Type": "application/json"
+              },
+              "operationType": "Remove Entitlement",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": "{\n\"groupNames\": [\n\"$plan.groups$\"\n],\n\"userName\": \"$plan.nativeIdentity$\"\n}",
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "resMappingObj": {
+                "IsShopFloor": "isShopFloor",
+                "Email": "email",
+                "UserName": "name",
+                "IsActive": "isActive",
+                "PwdDaysToExpire": "pwdDaysToExpire",
+                "PhoneNumber": "phoneNumber",
+                "EmployeeId": "employeeId"
+              },
+              "contextUrl": "/v1/users/$plan.nativeIdentity$",
+              "httpMethodType": "GET",
+              "pagingInitialOffset": 0,
+              "pagingSize": 50,
+              "sequenceNumberForEndpoint": "8",
+              "uniqueNameForEndPoint": "Single Account Aggregation",
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211"
+              },
+              "operationType": "Get Object",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": null,
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ]
+            },
+            {
+              "httpMethodType": "GET",
+              "pagingInitialOffset": 0,
+              "sequenceNumberForEndpoint": "9",
+              "uniqueNameForEndPoint": "Role Aggregation",
+              "rootPath": "$[*]",
+              "body": {
+                "bodyFormData": null,
+                "jsonBody": null,
+                "bodyFormat": "raw"
+              },
+              "responseCode": [
+                "2**"
+              ],
+              "resMappingObj": {
+                "groups": "groupName"
+              },
+              "contextUrl": "/v1/groups",
+              "pagingSize": 50,
+              "curlEnabled": false,
+              "header": {
+                "Accept": "text/plain",
+                "tenant": "3211"
+              },
+              "operationType": "Group Aggregation"
+            }
+          ]
+        },
+        "correlationConfigDetails": {
+          "attributeAssignments": [
+            {
+              "complex": false,
+              "property": "identificationNumber",
+              "operation": "EQ",
+              "value": "EmployeeId",
+              "ignoreCase": false,
+              "matchMode": null,
+              "filterString": null,
+              "sequence": 1
+            },
+            {
+              "complex": false,
+              "property": "uid",
+              "operation": "EQ",
+              "value": "UserName",
+              "ignoreCase": true,
+              "matchMode": null,
+              "filterString": null,
+              "sequence": 2
+            }
+          ],
+          "name": "Panther 3211 Battle Creek [source] Account Correlation Config"
+        },
+        "managerCorrelationMapping": null,
+        "provisioningPolicies": [
+          {
+            "name": "Account",
+            "description": null,
+            "usageType": "CREATE",
+            "fields": [
+              {
+                "name": "FirstName",
+                "transform": {
+                  "attributes": {
+                    "name": "adFirstName"
+                  },
+                  "type": "identityAttribute"
+                },
+                "attributes": {},
+                "isRequired": false,
+                "type": "string",
+                "isMultiValued": false
+              },
+              {
+                "name": "LastName",
+                "transform": {
+                  "type": "identityAttribute",
+                  "attributes": {
+                    "name": "adLastName"
+                  }
+                },
+                "attributes": {},
+                "isRequired": false,
+                "type": "string",
+                "isMultiValued": false
+              },
+              {
+                "name": "UserName",
+                "transform": {
+                  "type": "concat",
+                  "attributes": {
+                    "values": [
+                      "westrock\\",
+                      {
+                        "type": "identityAttribute",
+                        "attributes": {
+                          "name": "lanId"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "attributes": {},
+                "isRequired": false,
+                "type": "string",
+                "isMultiValued": false
+              },
+              {
+                "name": "Email",
+                "transform": {
+                  "type": "identityAttribute",
+                  "attributes": {
+                    "name": "email"
+                  }
+                },
+                "attributes": {},
+                "isRequired": false,
+                "type": "string",
+                "isMultiValued": false
+              },
+              {
+                "name": "Password",
+                "transform": {
+                  "attributes": {
+                    "values": [
+                      {
+                        "type": "identityAttribute",
+                        "attributes": {
+                          "name": "cmiId"
+                        }
+                      },
+                      {
+                        "attributes": {
+                          "name": "Cloud Services Deployment Utility",
+                          "operation": "getEndOfString",
+                          "numChars": "2",
+                          "input": {
+                            "type": "identityAttribute",
+                            "attributes": {
+                              "name": "identificationNumber"
+                            }
+                          }
+                        },
+                        "type": "rule"
+                      }
+                    ]
+                  },
+                  "type": "concat"
+                },
+                "attributes": {},
+                "isRequired": false,
+                "type": "string",
+                "isMultiValued": false
+              },
+              {
+                "name": "PhoneNumber",
+                "transform": {
+                  "type": "identityAttribute",
+                  "attributes": {
+                    "name": "snowPhoneNumber"
+                  }
+                },
+                "attributes": {},
+                "isRequired": false,
+                "type": "string",
+                "isMultiValued": false
+              },
+              {
+                "name": "EmployeeId",
+                "transform": {
+                  "type": "identityAttribute",
+                  "attributes": {
+                    "name": "identificationNumber"
+                  }
+                },
+                "attributes": {},
+                "isRequired": false,
+                "type": "string",
+                "isMultiValued": false
+              },
+              {
+                "name": "IsShopFloor",
+                "transform": null,
+                "attributes": {},
+                "isRequired": false,
+                "type": "bool",
+                "isMultiValued": false
+              },
+              {
+                "name": "PwdDayToExpire",
+                "transform": null,
+                "attributes": {},
+                "isRequired": false,
+                "type": "int",
+                "isMultiValued": false
+              },
+              {
+                "name": "IsActive",
+                "transform": null,
+                "attributes": {},
+                "isRequired": false,
+                "type": "bool",
+                "isMultiValued": false
+              },
+              {
+                "name": "ForceNewPassword",
+                "transform": null,
+                "attributes": {},
+                "isRequired": false,
+                "type": "bool",
+                "isMultiValued": false
+              },
+              {
+                "name": "ForcePasswordExpiration",
+                "transform": null,
+                "attributes": {},
+                "isRequired": false,
+                "type": "bool",
+                "isMultiValued": false
+              },
+              {
+                "name": "IsEmployee",
+                "transform": null,
+                "attributes": {},
+                "isRequired": false,
+                "type": "bool",
+                "isMultiValued": false
+              }
+            ]
+          }
+        ],
+        "managementWorkgroup": null,
+        "passwordPolicies": null
+      }
+    }
+  ]
+}

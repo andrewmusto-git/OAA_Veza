@@ -1,0 +1,3 @@
+requests>=2.31.0
+python-dotenv>=1.0.0
+veza-oaa @ git+https://github.com/pvolu-vz/OAA_Agent.git@main
